@@ -61,15 +61,15 @@
 
 | scope      | 对应路径/内容                                                     |
 | ---------- | ----------------------------------------------------------------- |
-| `repo`     | 仓库级配置、git、AGENTS.md、`parts.nix` 之外的杂项                |
+| `repo`     | 仓库级配置、git、AGENTS.md、README、LICENSE 等杂项                |
 | `flake`    | `flake.nix`、`flake.lock`、`parts.nix`、inputs/outputs 结构       |
 | `host`     | `configuration.nix`：`nixosConfigurations.sheng`、平台覆盖、字体、zram/swap、systemPackages |
 | `user`     | `user.nix`、`ssh.nix`：账号、密码哈希、公钥                       |
-| `core`     | `core/`：`core.nix`、`hjem.nix`、`pkgs.nix`、`shell/`、`fastfetch/` |
+| `core`     | `core.nix`、`hjem.nix`、`shell/`、`fastfetch/`：hjem 接线与基础工具 |
 | `desktop`  | `niri/`、`noctalia/`、`fuzzel.nix`、`thunar.nix`、`theme.nix`、`power.nix` |
 | `terminal` | `alacritty.nix`、`kitty.nix`                                      |
 | `ime`      | `fcitx5.nix`、`ibus.nix`                                          |
-| `programs` | `sheng-programs.nix`：hjem 用户软件集合                           |
+| `programs` | `sheng-programs.nix`：hjem 用户软件集合，唯一的包入口             |
 | `packages` | `librewolf.nix`、`nixpak/`：自定义包与沙箱封装                    |
 | `editor`   | `vscode/`、`zed/`                                                 |
 | `assets`   | `assets/`：壁纸、logo 等静态资源                                  |
