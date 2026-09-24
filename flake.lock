@@ -133,17 +133,17 @@
       },
       "locked": {
         "dir": "nixos",
-        "lastModified": 1790160359,
-        "narHash": "sha256-hK01OhGExO6L3oSlDvCt79yX0/HjsR+cuE5xuMc1UYs=",
+        "lastModified": 1790234373,
+        "narHash": "sha256-LTQbIuz3eLwyeqYt+LQMuXoKCKqii3Ch817rbYmu9X8=",
         "owner": "Murkiness4095",
         "repo": "nixos-sheng",
-        "rev": "24c36daf63f0e446b842d4c1135a7085b271224c",
+        "rev": "6b45ebe965905f092486201686ab04dd1343ae35",
         "type": "github"
       },
       "original": {
         "dir": "nixos",
         "owner": "Murkiness4095",
-        "ref": "feat/niri-noctalia-image",
+        "ref": "niri",
         "repo": "nixos-sheng",
         "type": "github"
       }
@@ -321,7 +321,6 @@
         "nixpak": "nixpak",
         "nixpkgs": "nixpkgs_4",
         "noctalia": "noctalia_2",
-        "sops-nix": "sops-nix",
         "wrapper-modules": "wrapper-modules"
       }
     },
@@ -347,37 +346,17 @@
     "shengKernelSrc": {
       "flake": false,
       "locked": {
-        "lastModified": 1788061761,
-        "narHash": "sha256-U96RPTPuctbtzUxmqcyjW/Av+UO+s/XfyA4cGT/zaoU=",
+        "lastModified": 1790159858,
+        "narHash": "sha256-wYi8eRdqDGy6Ta8K6udnEgjFyANiz4Fk0q53dfyNGSE=",
         "owner": "DotRedstone",
         "repo": "linux-sheng",
-        "rev": "3ca17976c6b4165559b8e25922bbecf31ac84db7",
+        "rev": "c4b27e2cec1371e166f443877812639d4d0d33da",
         "type": "github"
       },
       "original": {
         "owner": "DotRedstone",
         "ref": "upgrade/sheng-7.1.8",
         "repo": "linux-sheng",
-        "type": "github"
-      }
-    },
-    "sops-nix": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1789890976,
-        "narHash": "sha256-GKwH3zpy7tartuJMG0Rv/xUsdetG1QLmTVv8UKgJLmA=",
-        "owner": "Mic92",
-        "repo": "sops-nix",
-        "rev": "7214124c20c1542c90deb54af50e2f53ae02711f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Mic92",
-        "repo": "sops-nix",
         "type": "github"
       }
     },

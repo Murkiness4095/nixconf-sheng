@@ -24,7 +24,7 @@
 
     # nixos-sheng.url = "github:DotRedstone/nixos-sheng?dir=nixos";
     # 切到本项目仓库的分支：该修复与其它设备侧改动都在那里。
-    nixos-sheng.url = "github:Murkiness4095/nixos-sheng?dir=nixos&ref=feat/niri-noctalia-image";
+    nixos-sheng.url = "github:Murkiness4095/nixos-sheng?dir=nixos&ref=niri";
 
     hjem = {
       url = "github:feel-co/hjem";
