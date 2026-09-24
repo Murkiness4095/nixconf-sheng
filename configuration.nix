@@ -7,6 +7,8 @@
 {
   flake.nixosConfigurations.sheng = inputs.nixos-sheng.lib.aarch64-linux.mkShengSystem [
     self.nixosModules.core
+    # 用户软件：core-pkgs 与 sheng-programs 合并后，只剩这一个包模块入口
+    self.nixosModules.sheng-pkgs
     self.nixosModules.ssh
     self.nixosModules.user
     self.nixosModules.noctalia
@@ -16,7 +18,6 @@
     self.nixosModules.fcitx5
     # self.nixosModules.ibus
     self.nixosModules.fuzzel
-    self.nixosModules.sheng-pkgs
     self.nixosModules.alacritty
     self.nixosModules.kitty
     self.nixosModules.theme

@@ -5,7 +5,6 @@
       self.nixosModules.fastfetch
       self.nixosModules.fish
       self.nixosModules.starship
-      self.nixosModules.core-pkgs
     ];
   };
 }

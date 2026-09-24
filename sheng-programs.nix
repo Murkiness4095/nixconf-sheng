@@ -9,7 +9,35 @@
       selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
     in
     {
+      # 设备侧用户软件集合：原来分成 core-pkgs（pkgs.nix）与 sheng-pkgs
+      # （sheng-programs.nix）两个模块，现在合并为一份列表，只被
+      # configuration.nix 引用一次。
       hjem.users.${username}.packages = with pkgs; [
+        # ── 基础工具 ──
+        just
+
+        fastfetch
+        microfetch
+        gh
+        btop
+        wlr-randr
+        tree
+
+        # nix 工具链
+        nh
+        nix-output-monitor
+        nvd
+        nix-tree
+
+        nil
+        nixfmt
+        nixpkgs-fmt
+
+        tmux
+        yazi
+        go-musicfox
+
+        # ── 浏览器 ──
         selfpkgs.librewolf
 
         # 名字里带 "-" 与能否 rebuild 无关：brave-origin 在 aarch64-linux 上有包、
@@ -27,12 +55,12 @@
         # 每次重建都要现场编译一整套 ffmpeg（数十分钟）。需要浏览器时用 brave。
         # firefox
 
-        # chat
+        # ── 聊天 ──
         telegram-desktop
         selfpkgs.qq
         selfpkgs.wechat
 
-        # media
+        # ── 媒体 ──
         kazumi
         celluloid # video
         imv # image
@@ -41,7 +69,7 @@
         libopenraw
         libgsf
 
-        # tools
+        # ── 工具 ──
         localsend
 
         # 剪贴板
