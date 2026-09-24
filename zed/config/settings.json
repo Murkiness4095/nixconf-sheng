@@ -1,0 +1,66 @@
+{
+  "proxy": "",
+  "agent": {
+    "commit_message_instructions": "Strictly follow Conventional Commits format: <type>(<scope>): <description>\n\nTypes: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert.\nKeep subject under 72 characters, no period at end, use imperative mood.\nIf scope is clear (e.g. nix, home-manager, zed), include it. Otherwise omit.\nOnly output the commit message, nothing else.",
+    "default_profile": "write",
+    "sandbox_permissions": {
+      "allow_unsandboxed": true
+    },
+    "default_model": {
+      "provider": "opencode",
+      "model": "go/kimi-k2.7-code",
+      "enable_thinking": false
+    },
+    "dock": "right",
+    "sidebar_side": "left",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "language_models": {
+    "opencode": {
+      "show_free_models": false,
+      "show_zen_models": false
+    }
+  },
+  "extend_comment_on_newline": false,
+  "cli_default_open_behavior": "new_window",
+  "project_panel": {
+    "dock": "left"
+  },
+  "buffer_font_family": "ComicShannsMono Nerd Font",
+  "buffer_font_fallbacks": [
+    "LXGW WenKai Screen",
+    "JetBrainsMono Nerd Font",
+    "monospace"
+  ],
+  "buffer_font_size": 14,
+  "ui_font_size": 15,
+  "theme": "One Dark",
+  "colorize_brackets": true,
+  "autosave": "on_focus_change",
+  "tab_size": 2,
+  "format_on_save": "on",
+  "tabs": {
+    "activate_on_close": "history",
+    "limit": 10
+  },
+  "languages": {
+    "Nix": {
+      "tab_size": 2,
+      "format_on_save": "on",
+      "language_servers": ["nil"],
+      "formatter": {
+        "external": {
+          "command": "nixfmt"
+        }
+      }
+    }
+  },
+  "file_scan_exclusions": [],
+  "context_servers": {
+    "nixos": {
+      "command": "mcp-nixos",
+      "args": []
+    }
+  }
+}

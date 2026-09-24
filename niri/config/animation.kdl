@@ -1,0 +1,38 @@
+// Animation settings.
+// The wiki explains how to configure individual animations:
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
+animations {
+    // Uncomment to turn off all animations.
+    // off
+
+    // Slow down all animations by this factor. Values below 1 speed them up instead.
+    slowdown 1.15
+}
+
+// Test
+/-animations {
+    slowdown 1.0
+
+    window-open {
+        // stiffness 从 200 提升到 500（迅速弹出），阻尼 0.88（柔和吸附，不肉也不猛弹）
+        spring damping-ratio=0.88 stiffness=500 epsilon=0.0001
+    }
+
+    window-close {
+        // 关窗干脆利落，不占用视觉时间
+        spring damping-ratio=1.0 stiffness=650 epsilon=0.0001
+    }
+
+    workspace-switch {
+        // stiffness 从 180 提升到 480，彻底解决上下切换的拖沓感
+        spring damping-ratio=1.0 stiffness=480 epsilon=0.0001
+    }
+
+    window-movement {
+        spring damping-ratio=0.9 stiffness=450 epsilon=0.0001
+    }
+
+    horizontal-view-movement {
+        spring damping-ratio=1.0 stiffness=380 epsilon=0.0001
+    }
+}

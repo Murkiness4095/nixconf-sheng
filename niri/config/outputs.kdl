@@ -1,0 +1,31 @@
+// --- 显示器配置 ---
+
+// 笔记本内置显示器 (Chimei Innolux 2.5K 165Hz)
+output "eDP-1" {
+    mode "2560x1440@165.003"
+    scale 1.5
+    transform "normal"
+    position x=0 y=0
+
+    // 关闭笔记本内屏
+    off
+}
+
+// 外接 KTC 显示器 (1080p 120Hz)
+/- output "HDMI-A-1" {
+    mode "1920x1080@120"
+    scale 1.0
+    transform "normal"
+    // position x=1707 y=0
+    // 当只剩一个屏幕时，position 设为 x=0 y=0 即可
+    position x=0 y=0
+}
+
+// KTC Technology Group H27T22S-3 Pro (2K 144Hz)
+output "HDMI-A-1" {
+    mode "2560x1440@144.002"
+    scale 1.25
+    // scale 1.0
+    transform "normal"
+    position x=0 y=0
+}

@@ -1,0 +1,38 @@
+{
+  "locale": "zh-CN",
+  "editor.fontFamily": "'ComicShannsMono Nerd Font', 'LXGW WenKai', 'JetBrainsMono Nerd Font', monospace",
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "files.autoSave": "onFocusChange",
+  // ===== 保存自动格式化 =====
+  "editor.formatOnSave": true,
+  // ===== 原生彩虹括号 =====
+  // "editor.bracketPairColorization.enabled": true,
+  // "editor.guides.bracketPairs": true,
+  // ===== Nix 设置 =====
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide",
+    "editor.formatOnSave": true
+  },
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nil",
+  "nix.formatterPath": "nixfmt",
+  // ===== Guix (Scheme) 标准缩进与 Parinfer 配置 =====
+  "[scheme]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true, // 严格强制空格替代 Tab
+    "editor.detectIndentation": false, // 禁用自动根据当前文件猜缩进，强制遵循 2 空格
+    "editor.autoIndent": "full",
+    "editor.formatOnSave": true,
+    "editor.bracketPairColorization.enabled": true
+  },
+  // ===== Parinfer 模式设置 =====
+  "parinfer.mode": "smart", // 使用 smart 模式（兼顾缩进推导括号与手动改括号）
+  "parinfer.forceBalance": true, // 强制自动平衡括号，写 Guix 再也不漏配对
+  // ===== 显示 .git 目录设置 =====
+  "files.exclude": {
+    "**/.git": false
+  },
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilotcli:"
+}

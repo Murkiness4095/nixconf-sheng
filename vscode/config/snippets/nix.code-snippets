@@ -1,0 +1,29 @@
+{
+  "Home Manager / NixOS Module Template": {
+    "prefix": "nix",
+    "body": [
+      "{",
+      "  pkgs,",
+      "  ...",
+      "}:",
+      "",
+      "{",
+      "  $0",
+      "}"
+    ],
+    "description": "快速生成标准 Nix 模块结构"
+  },
+  "Nix Shell Template": {
+    "prefix": "nixshell",
+    "body": [
+      "{ pkgs ? import <nixpkgs> {} }:",
+      "",
+      "pkgs.mkShell {",
+      "  buildInputs = with pkgs; [",
+      "    $0",
+      "  ];",
+      "}"
+    ],
+    "description": "快速创建 devShell 模板"
+  }
+}

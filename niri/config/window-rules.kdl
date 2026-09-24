@@ -1,0 +1,54 @@
+// 窗口规则 (Window Rules) 允许你为特定的单个窗口调整行为。
+// 更多信息请参考维基页面：
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
+
+// 系统/隐私规则
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    block-out-from "screen-capture"
+}
+
+// 将 Firefox 的“画中画”窗口设置为浮动模式
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// 全局外观
+window-rule {
+    opacity 0.85
+    geometry-corner-radius 12
+    clip-to-geometry true
+    draw-border-with-background false
+}
+
+layer-rule {
+    match namespace=r#"^noctalia.*"#
+
+    background-effect {
+        blur false
+    }
+}
+
+// 全局模糊，所有应用聚焦时模糊
+window-rule {
+    // 使用正则匹配所有窗口，并在 match 中指定 is-focused=true 条件
+    match is-focused=true
+
+    background-effect {
+        blur true
+        xray true
+    }
+}
+
+// 特定应用专属覆盖
+window-rule {
+    match app-id=r#"^(code|codium|antigravity|kitty|Alacritty|dev\.zed\.Zed)$"#
+    opacity 0.82
+}
