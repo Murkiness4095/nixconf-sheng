@@ -8,7 +8,7 @@
   flake.nixosConfigurations.sheng = inputs.nixos-sheng.lib.aarch64-linux.mkShengSystem [
     self.nixosModules.core
     # 用户软件：core-pkgs 与 sheng-programs 合并后，只剩这一个包模块入口
-    self.nixosModules.sheng-pkgs
+    self.nixosModules.pkgs
     self.nixosModules.ssh
     self.nixosModules.user
     self.nixosModules.noctalia
@@ -30,7 +30,7 @@
     self.nixosModules.power
 
     # proxy
-    # self.nixosModules.mihomo
+    self.nixosModules.mihomo
 
     ({ pkgs, lib, ... }: {
       # 网络与时区 (使用 mkForce 强行覆盖上游硬件库中设置的默认值)

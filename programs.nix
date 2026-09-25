@@ -1,5 +1,5 @@
 { self, ... }: {
-  flake.nixosModules.sheng-pkgs =
+  flake.nixosModules.pkgs =
     {
       pkgs,
       username,
