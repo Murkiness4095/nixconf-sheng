@@ -63,16 +63,20 @@
 | ---------- | ----------------------------------------------------------------- |
 | `repo`     | 仓库级配置、git、AGENTS.md、README、LICENSE 等杂项                |
 | `flake`    | `flake.nix`、`flake.lock`、`parts.nix`、inputs/outputs 结构       |
-| `host`     | `configuration.nix`：`nixosConfigurations.sheng`、平台覆盖、字体、zram/swap、systemPackages |
-| `user`     | `user.nix`、`ssh.nix`：账号、密码哈希、公钥                       |
-| `core`     | `core.nix`、`hjem.nix`、`shell/`、`fastfetch/`：hjem 接线与基础工具 |
-| `desktop`  | `niri/`、`noctalia/`、`fuzzel.nix`、`thunar.nix`、`theme.nix`、`power.nix` |
-| `terminal` | `alacritty.nix`、`kitty.nix`                                      |
-| `ime`      | `fcitx5.nix`、`ibus.nix`                                          |
-| `programs` | `sheng-programs.nix`：hjem 用户软件集合，唯一的包入口             |
-| `packages` | `librewolf.nix`、`nixpak/`：自定义包与沙箱封装                    |
-| `editor`   | `vscode/`、`zed/`                                                 |
+| `host`     | `hosts/sheng/configuration.nix`：`nixosConfigurations.sheng`、平台覆盖、字体、zram/swap、systemPackages |
+| `user`     | `hosts/sheng/user.nix`、`hosts/sheng/ssh.nix`：账号、密码哈希、公钥 |
+| `core`     | `features/core.nix`、`features/hjem.nix`、`features/shell/`、`features/fastfetch/`：hjem 接线与基础工具 |
+| `desktop`  | `features/niri/`、`features/noctalia/`、`features/fuzzel.nix`、`features/thunar.nix`、`features/theme.nix`、`features/power.nix` |
+| `terminal` | `features/alacritty.nix`、`features/kitty.nix`                    |
+| `ime`      | `features/fcitx5.nix`、`features/ibus.nix`                        |
+| `programs` | `features/programs.nix`：hjem 用户软件集合，唯一的包入口          |
+| `packages` | `features/librewolf.nix`、`features/nixpak/`：自定义包与沙箱封装  |
+| `editor`   | `features/vscode/`、`features/zed/`                               |
+| `proxy`    | `features/mihomo.nix`：mihomo 代理与 webui                        |
 | `assets`   | `assets/`：壁纸、logo 等静态资源                                  |
+
+仓库布局：`hosts/<host>/` 放宿主入口与账号身份，`features/` 放功能模块；
+`flake.nix`、`Justfile`、`assets/` 等留在仓库根。
 
 使用最具体的 scope；若改动跨多个 scope，应拆分提交；确实无法拆分时可省略 scope。
 
