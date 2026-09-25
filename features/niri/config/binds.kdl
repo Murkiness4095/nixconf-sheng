@@ -241,7 +241,6 @@ binds {
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
-    Shift+Print { spawn "/home/fall_dust/data/Programs/wayscrollshot/wayscrollshot"; }
     Super+Print { spawn "sh" "-c" "wl-paste -t image/png | satty --filename -"; }
 
     // Applications such as remote-desktop clients and software KVM switches may
