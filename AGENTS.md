@@ -65,7 +65,8 @@
 | `flake`    | `flake.nix`、`flake.lock`、`parts.nix`、inputs/outputs 结构       |
 | `host`     | `hosts/sheng/configuration.nix`：`nixosConfigurations.sheng`、平台覆盖、字体、zram/swap、systemPackages |
 | `base`     | `features/base/`：账号、密码哈希、公钥、SSH 服务与防火墙           |
-| `core`     | `features/core.nix`、`features/hjem.nix`、`features/shell/`、`features/fastfetch/`：hjem 接线与基础工具 |
+| `extra`    | `features/extra/`：粘合模块，目前只有 hjem 接线                   |
+| `core`     | `features/core.nix`、`features/shell/`、`features/fastfetch/`：基础工具 |
 | `desktop`  | `features/niri/`、`features/noctalia/`、`features/fuzzel.nix`、`features/thunar.nix`、`features/theme.nix`、`features/power.nix` |
 | `terminal` | `features/alacritty.nix`、`features/kitty.nix`                    |
 | `ime`      | `features/fcitx5.nix`、`features/ibus.nix`                        |

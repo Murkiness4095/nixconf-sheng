@@ -14,7 +14,8 @@
 
 - `hosts/`：宿主入口 —— 系统装配与平台默认值覆盖。
 - `features/`：功能模块 —— 桌面会话、终端、输入法、编辑器、主题、用户软件集合等；
-  `features/base/` 是账号身份与 SSH 的统一入口。
+  `features/base/` 是账号身份与 SSH 的统一入口，`features/extra/` 放 hjem 接线这类
+  粘合模块。
 - `wrappedPrograms/`：需要额外封装的程序 —— LibreWolf 与 qq/wechat 沙箱。
 - `assets/`：壁纸与 logo。
 
