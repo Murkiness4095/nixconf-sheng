@@ -1,5 +1,6 @@
+# base 模块的一部分：SSH 服务、防火墙与 terminfo。
 {
-  flake.nixosModules.ssh =
+  flake.nixosModules.base =
     { lib, pkgs, ... }:
 
     {

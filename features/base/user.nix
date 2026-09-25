@@ -1,5 +1,6 @@
+# base 模块的一部分：账号身份（用户名、密码哈希、SSH 公钥与附加组）。
 {
-  flake.nixosModules.user =
+  flake.nixosModules.base =
     {
       config,
       pkgs,

@@ -7,10 +7,10 @@
 {
   flake.nixosConfigurations.sheng = inputs.nixos-sheng.lib.aarch64-linux.mkShengSystem [
     self.nixosModules.core
+    # 账号身份与 SSH：user.nix 与 ssh.nix 合并成同一个 base 模块
+    self.nixosModules.base
     # 用户软件：core-pkgs 与 sheng-programs 合并后，只剩这一个包模块入口
     self.nixosModules.pkgs
-    self.nixosModules.ssh
-    self.nixosModules.user
     self.nixosModules.noctalia
     self.nixosModules.niri
     self.nixosModules.thunar

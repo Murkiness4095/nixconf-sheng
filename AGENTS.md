@@ -64,7 +64,7 @@
 | `repo`     | 仓库级配置、git、AGENTS.md、README、LICENSE 等杂项                |
 | `flake`    | `flake.nix`、`flake.lock`、`parts.nix`、inputs/outputs 结构       |
 | `host`     | `hosts/sheng/configuration.nix`：`nixosConfigurations.sheng`、平台覆盖、字体、zram/swap、systemPackages |
-| `user`     | `hosts/sheng/user.nix`、`hosts/sheng/ssh.nix`：账号、密码哈希、公钥 |
+| `base`     | `features/base/`：账号、密码哈希、公钥、SSH 服务与防火墙           |
 | `core`     | `features/core.nix`、`features/hjem.nix`、`features/shell/`、`features/fastfetch/`：hjem 接线与基础工具 |
 | `desktop`  | `features/niri/`、`features/noctalia/`、`features/fuzzel.nix`、`features/thunar.nix`、`features/theme.nix`、`features/power.nix` |
 | `terminal` | `features/alacritty.nix`、`features/kitty.nix`                    |
@@ -75,8 +75,9 @@
 | `proxy`    | `features/mihomo.nix`：mihomo 代理与 webui                        |
 | `assets`   | `assets/`：壁纸、logo 等静态资源                                  |
 
-仓库布局：`hosts/<host>/` 放宿主入口与账号身份，`features/` 放功能模块，
-`wrappedPrograms/` 放封装过的程序；`flake.nix`、`Justfile`、`assets/` 等留在仓库根。
+仓库布局：`hosts/<host>/` 放宿主入口（系统装配与平台默认值覆盖），`features/` 放功能模块
+（`features/base/` 统一放账号身份与 SSH），`wrappedPrograms/` 放封装过的程序；
+`flake.nix`、`Justfile`、`assets/` 等留在仓库根。
 
 使用最具体的 scope；若改动跨多个 scope，应拆分提交；确实无法拆分时可省略 scope。
 
