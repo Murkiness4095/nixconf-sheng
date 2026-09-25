@@ -12,23 +12,12 @@
 递归 import 除 `flake.nix` 和 `_` 前缀之外的所有 `.nix` 文件。因此新增一个功能模块
 = 新增一个文件，不需要维护 import 列表，也不会出现“忘了注册模块”的情况。
 
-两个目录：`hosts/` 放宿主入口与账号身份（宿主相关），`features/` 放功能模块
-（桌面、终端、输入法、程序集合等），两者之外的 `flake.nix`、`Justfile`、`assets/`
-等留在仓库根。
+- `hosts/`：宿主入口与账号身份 —— 系统装配、平台默认值覆盖、账号与 SSH 公钥。
+- `features/`：功能模块 —— 桌面会话、终端、输入法、编辑器、主题、用户软件集合等。
+- `wrappedPrograms/`：需要额外封装的程序 —— LibreWolf 与 qq/wechat 沙箱。
+- `assets/`：壁纸与 logo。
 
-| 路径 | 作用 |
-| --- | --- |
-| `hosts/sheng/configuration.nix` | `nixosConfigurations.sheng`：装配各模块，并覆盖平台默认值（hostname、时区、字体、zram、swap、`systemPackages`） |
-| `hosts/sheng/user.nix`、`hosts/sheng/ssh.nix` | 账号、密码哈希、sudo、SSH 公钥 |
-| `features/programs.nix` | hjem 用户软件集合（浏览器 / 聊天 / 媒体 / 工具），唯一的包入口 |
-| `features/core.nix`、`features/hjem.nix`、`features/fastfetch/`、`features/shell/` | hjem 接线、fastfetch、fish + starship |
-| `features/niri/`、`features/noctalia/` | niri 会话与 Noctalia 状态栏，含各自的配置文件 |
-| `features/theme.nix`、`features/power.nix` | GTK/图标主题、电源与亮度 |
-| `features/alacritty.nix`、`features/kitty.nix`、`features/fcitx5.nix`、`features/ibus.nix` | 终端与输入法 |
-| `features/vscode/`、`features/zed/` | 编辑器配置 |
-| `features/librewolf.nix`、`features/nixpak/` | 自定义包：LibreWolf AppImage 封装、qq/wechat 沙箱封装 |
-| `features/mihomo.nix` | mihomo 代理：tun 模式 + zashboard 控制台 |
-| `assets/` | 壁纸与 logo（目前未被任何配置引用） |
+`flake.nix`、`Justfile` 等仓库级文件留在仓库根。
 
 用户级配置与软件由 [hjem](https://github.com/feel-co/hjem) 管理，替代 home-manager。
 

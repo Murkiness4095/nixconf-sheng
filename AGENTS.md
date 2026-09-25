@@ -70,13 +70,13 @@
 | `terminal` | `features/alacritty.nix`、`features/kitty.nix`                    |
 | `ime`      | `features/fcitx5.nix`、`features/ibus.nix`                        |
 | `programs` | `features/programs.nix`：hjem 用户软件集合，唯一的包入口          |
-| `packages` | `features/librewolf.nix`、`features/nixpak/`：自定义包与沙箱封装  |
+| `packages` | `wrappedPrograms/`：LibreWolf 与 qq/wechat 的封装与沙箱 |
 | `editor`   | `features/vscode/`、`features/zed/`                               |
 | `proxy`    | `features/mihomo.nix`：mihomo 代理与 webui                        |
 | `assets`   | `assets/`：壁纸、logo 等静态资源                                  |
 
-仓库布局：`hosts/<host>/` 放宿主入口与账号身份，`features/` 放功能模块；
-`flake.nix`、`Justfile`、`assets/` 等留在仓库根。
+仓库布局：`hosts/<host>/` 放宿主入口与账号身份，`features/` 放功能模块，
+`wrappedPrograms/` 放封装过的程序；`flake.nix`、`Justfile`、`assets/` 等留在仓库根。
 
 使用最具体的 scope；若改动跨多个 scope，应拆分提交；确实无法拆分时可省略 scope。
 
