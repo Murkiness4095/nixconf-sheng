@@ -38,10 +38,6 @@
       time.timeZone = pkgs.lib.mkForce "Asia/Shanghai";
       i18n.defaultLocale = pkgs.lib.mkForce "zh_CN.UTF-8";
 
-      # 输入法改为 ibus 后，原先为 fcitx5-configtool 加的
-      # qt6Packages/fcitx5-with-addons overlay 已不再需要（fzx5 整条链已移除），
-      # 故删除，避免留一个无作用的 overlay。
-
       # Keep the public image self-contained: UI, Chinese, monospace, symbols,
       # emoji, and document fonts all have an explicit fallback.
       fonts = {
@@ -113,46 +109,10 @@
         nix-output-monitor
       ];
 
-      # Keep ADB's root shell from resolving ~ to the stale /root clone. Home
-      # Manager must run as dot so its profile and generated files keep ownership.
-      # environment.shellAliases = {
-      #   nrs = "nixos-rebuild switch --flake /home/dot/dotfiles-sheng#sheng";
-      #   nrs-niri = "nixos-rebuild switch --flake /home/dot/dotfiles-sheng#sheng-niri";
-      #   hms = "${pkgs.util-linux}/bin/runuser -u dot -- ${pkgs.coreutils}/bin/env HOME=/home/dot USER=dot ${pkgs.nh}/bin/nh home switch /home/dot/dotfiles-sheng -c dot@sheng";
-      # };
-
       # 在 sheng 上先关闭自动 GC。移动端 rootfs 一旦带 ext4 错误启动，
       # 开机补跑 GC 很容易把 /nix/store 写入压力放大成 emergency read-only。
       nix.gc.automatic = pkgs.lib.mkForce false;
 
-      # === 彻底隐藏上游的默认配置 ===
-      # 为了不破坏上游 Home Manager 的构建逻辑（它需要 /home/luser），
-      # 我们强行保留它的家目录，但把它降级为系统底层账户（非普通用户），
-      # 这样它就会被彻底踢出图形登录界面！
-      # users.users.luser.isNormalUser = pkgs.lib.mkForce false;
-      # users.users.luser.isSystemUser = true;
-      # users.users.luser.group = "luser";
-      # users.groups.luser = { };
-      # users.users.luser.home = pkgs.lib.mkForce "/home/luser";
-
-      # 1. 启用 fish 作为系统 shell
-      programs.fish.enable = true;
-
-      # 2. 创建你专属的 dot 账号，密码设为 1
-      # users.users.fall_dust = {
-      #   isNormalUser = true;
-      #   description = "fall_dust";
-      #   extraGroups = [
-      #     "wheel"
-      #     "networkmanager"
-      #     "audio"
-      #     "video"
-      #     "input"
-      #     "render"
-      #   ];
-      #   password = "1";
-      #   shell = pkgs.fish;
-      # };
       # --- 开启自定义模块 ---
       my.base.user = {
         enable = true;
@@ -203,17 +163,9 @@
       ];
 
       nix.settings = {
+        accept-flake-config = true;
         trusted-users = [ "fall_dust" ];
-
-        # substituters = [
-        #   "https://nixos-sheng.cachix.org"
-        # ];
-
-        # trusted-public-keys = [
-        #   "nixos-sheng.cachix.org-1:+YoR5YC34UBI/uTCq9XRSMyQa0vAD2IarGtvwKKgv1Q="
-        # ];
       };
     })
   ];
-
 }
