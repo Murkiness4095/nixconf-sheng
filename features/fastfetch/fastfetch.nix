@@ -7,7 +7,7 @@
       ...
     }:
     let
-      configDir = "${config.users.users.${user}.home}/sheng/features/fastfetch/config";
+      configDir = "${config.users.users.${user}.home}/dotfiles-sheng/features/fastfetch/config";
     in
     {
       hjem.users.${user} = {

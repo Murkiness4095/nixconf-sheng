@@ -7,7 +7,7 @@
       ...
     }:
     let
-      configDir = "${config.users.users.${user}.home}/sheng/features/zed/config";
+      configDir = "${config.users.users.${user}.home}/dotfiles-sheng/features/zed/config";
     in
     {
       hjem.users.${user} = {
