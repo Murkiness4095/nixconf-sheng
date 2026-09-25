@@ -9,7 +9,7 @@
       ...
     }:
     let
-      configDir = "${config.users.users.${username}.home}/sheng/niri/config";
+      configDir = "${config.users.users.${username}.home}/sheng/features/niri/config";
     in
     {
       programs.niri = {

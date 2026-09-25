@@ -6,7 +6,7 @@
       ...
     }:
     let
-      configDir = "${config.users.users.${username}.home}/sheng/noctalia/config";
+      configDir = "${config.users.users.${username}.home}/sheng/features/noctalia/config";
     in
     {
       hjem = {
