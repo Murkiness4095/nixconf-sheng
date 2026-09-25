@@ -1,4 +1,4 @@
-# dotfiles-sheng —— 小米平板 6S Pro 的设备侧 NixOS 配置
+# nixconf-sheng —— 小米平板 6S Pro 的设备侧 NixOS 配置
 
 针对**专用设备**的 nix 配置：小米平板 6S Pro（代号 `sheng`，`aarch64-linux`）。
 它不是通用桌面配置——硬件平台（内核、DTB、固件、stage-1、传感器、触控、指纹、
