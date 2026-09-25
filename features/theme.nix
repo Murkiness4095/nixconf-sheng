@@ -2,7 +2,7 @@
   flake.nixosModules.theme =
     {
       pkgs,
-      username,
+      user,
       ...
     }:
 
@@ -15,7 +15,7 @@
       '';
     in
     {
-      hjem.users.${username} = {
+      hjem.users.${user} = {
         packages = with pkgs; [
           # GTK 主题包与字体
           adw-gtk3

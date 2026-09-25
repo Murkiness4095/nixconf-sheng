@@ -3,7 +3,7 @@
     {
       pkgs,
       lib,
-      username,
+      user,
       ...
     }:
 
@@ -100,7 +100,7 @@
       };
     in
     {
-      hjem.users.${username} = {
+      hjem.users.${user} = {
         packages = [ pkgs.starship ];
 
         files.".config/starship.toml".source = tomlFormat.generate "starship.toml" starshipSettings;

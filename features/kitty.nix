@@ -1,6 +1,6 @@
 {
   flake.nixosModules.kitty =
-    { pkgs, username, ... }:
+    { pkgs, user, ... }:
     let
       kittyConfig = ''
         # --- 字体配置 ---
@@ -71,7 +71,7 @@
       '';
     in
     {
-      hjem.users.${username} = {
+      hjem.users.${user} = {
         packages = [ pkgs.kitty ];
 
         files.".config/kitty/kitty.conf".text = kittyConfig;

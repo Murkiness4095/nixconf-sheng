@@ -3,14 +3,14 @@
     {
       config,
       pkgs,
-      username,
+      user,
       ...
     }:
     let
-      configDir = "${config.users.users.${username}.home}/sheng/features/fastfetch/config";
+      configDir = "${config.users.users.${user}.home}/sheng/features/fastfetch/config";
     in
     {
-      hjem.users.${username} = {
+      hjem.users.${user} = {
         packages = [
           pkgs.fastfetch
         ];

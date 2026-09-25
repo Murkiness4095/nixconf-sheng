@@ -2,11 +2,11 @@
   flake.nixosModules.noctalia =
     {
       config,
-      username,
+      user,
       ...
     }:
     let
-      configDir = "${config.users.users.${username}.home}/sheng/features/noctalia/config";
+      configDir = "${config.users.users.${user}.home}/sheng/features/noctalia/config";
     in
     {
       hjem = {
@@ -14,7 +14,7 @@
           inputs.noctalia.hjemModules.default
         ];
 
-        users.${username} = {
+        users.${user} = {
           programs.noctalia = {
             enable = true;
             systemd.enable = true;

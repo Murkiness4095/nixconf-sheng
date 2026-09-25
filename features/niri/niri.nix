@@ -5,11 +5,11 @@
       config,
       lib,
       pkgs,
-      username,
+      user,
       ...
     }:
     let
-      configDir = "${config.users.users.${username}.home}/sheng/features/niri/config";
+      configDir = "${config.users.users.${user}.home}/sheng/features/niri/config";
     in
     {
       programs.niri = {
@@ -43,7 +43,7 @@
         gnome-themes-extra
       ];
 
-      hjem.users.${username} = {
+      hjem.users.${user} = {
         xdg.config.files = {
           # 替代 dconf prefer-dark
           "gtk-3.0/settings.ini".text = ''

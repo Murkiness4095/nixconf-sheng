@@ -3,14 +3,14 @@
     {
       config,
       pkgs,
-      username,
+      user,
       ...
     }:
     let
-      configDir = "${config.users.users.${username}.home}/sheng/features/zed/config";
+      configDir = "${config.users.users.${user}.home}/sheng/features/zed/config";
     in
     {
-      hjem.users.${username} = {
+      hjem.users.${user} = {
         packages = with pkgs; [
           zed-editor
         ];

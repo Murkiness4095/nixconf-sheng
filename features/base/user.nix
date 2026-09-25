@@ -54,8 +54,8 @@
 
       config = lib.mkMerge [
         {
-          # 核心逻辑：这里导出 username 传递给其他 NixOS 模块（如你的 hjem 模块）
-          _module.args.username = cfg.name;
+          # 核心逻辑：把账号名导出为 _module.args.user，供 hjem 等功能模块直接引用
+          _module.args.user = cfg.name;
         }
         (lib.mkIf cfg.enable {
           users.mutableUsers = false;

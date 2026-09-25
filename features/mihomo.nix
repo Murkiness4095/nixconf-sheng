@@ -3,7 +3,7 @@
     {
       config,
       pkgs,
-      username,
+      user,
       ...
     }:
     {
@@ -12,7 +12,7 @@
         tunMode = true;
         # webui = pkgs.metacubexd;
         webui = pkgs.zashboard;
-        configFile = "${config.users.users.${username}.home}/data/Tool/proxy/mihomo/config.yaml";
+        configFile = "${config.users.users.${user}.home}/data/Tool/proxy/mihomo/config.yaml";
       };
     };
 }

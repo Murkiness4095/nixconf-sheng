@@ -1,6 +1,6 @@
 {
   flake.nixosModules.alacritty =
-    { pkgs, username, ... }:
+    { pkgs, user, ... }:
 
     let
       tomlFormat = pkgs.formats.toml { };
@@ -69,7 +69,7 @@
       };
     in
     {
-      hjem.users.${username} = {
+      hjem.users.${user} = {
         packages = [ pkgs.alacritty ];
 
         files.".config/alacritty/alacritty.toml".source =

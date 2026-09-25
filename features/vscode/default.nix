@@ -4,12 +4,12 @@
     {
       config,
       pkgs,
-      username,
+      user,
       ...
     }:
 
     {
-      hjem.users.${username} = {
+      hjem.users.${user} = {
         # 软链接到 Nix store 中的配置
         xdg.config.files = {
           "Code/User".source = ./config;

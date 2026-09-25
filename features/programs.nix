@@ -2,7 +2,7 @@
   flake.nixosModules.pkgs =
     {
       pkgs,
-      username,
+      user,
       ...
     }:
     let
@@ -12,7 +12,7 @@
       # 设备侧用户软件集合：原来分成 core-pkgs（pkgs.nix）与 sheng-pkgs
       # （sheng-programs.nix）两个模块，现在合并为一份列表，只被
       # configuration.nix 引用一次。
-      hjem.users.${username}.packages = with pkgs; [
+      hjem.users.${user}.packages = with pkgs; [
         # ── 基础工具 ──
         just
 

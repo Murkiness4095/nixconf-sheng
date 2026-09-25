@@ -1,6 +1,6 @@
 {
   flake.nixosModules.fuzzel =
-    { pkgs, username, ... }:
+    { pkgs, user, ... }:
 
     let
       # 1. 使用 pkgs.formats.ini 生成 INI 格式的配置文件
@@ -29,7 +29,7 @@
       };
     in
     {
-      hjem.users.${username} = {
+      hjem.users.${user} = {
         # 2. 安装 fuzzel 软件包
         packages = [ pkgs.fuzzel ];
 

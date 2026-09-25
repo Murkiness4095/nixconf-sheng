@@ -1,6 +1,6 @@
 {
   flake.nixosModules.fish =
-    { pkgs, username, ... }:
+    { pkgs, user, ... }:
 
     let
       fishConfig = ''
@@ -28,9 +28,9 @@
     in
     {
       programs.fish.enable = true;
-      users.users.${username}.shell = pkgs.fish;
+      users.users.${user}.shell = pkgs.fish;
 
-      hjem.users.${username} = {
+      hjem.users.${user} = {
         packages = with pkgs; [
           fish
           fishPlugins.foreign-env

@@ -1,12 +1,12 @@
 { inputs, ... }: {
-  flake.nixosModules.hjem = { username, ... }: {
+  flake.nixosModules.hjem = { user, ... }: {
     imports = [
       inputs.hjem.nixosModules.default
     ];
 
-    hjem.users.${username} = {
-      user = username; # this is the name of the user
-      directory = "/home/${username}"; # where the user's $HOME resides
+    hjem.users.${user} = {
+      user = user; # this is the name of the user
+      directory = "/home/${user}"; # where the user's $HOME resides
       clobberFiles = true;
     };
   };
