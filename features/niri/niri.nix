@@ -9,7 +9,7 @@
       ...
     }:
     let
-      configDir = "${config.users.users.${user}.home}/dotfiles-sheng/features/niri/config";
+      configDir = "${config.my.base.repoDir}/features/niri/config";
     in
     {
       programs.niri = {
