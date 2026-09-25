@@ -7,7 +7,7 @@
       ...
     }:
     let
-      configDir = "${config.my.base.repoDir}/features/zed/config";
+      configDir = "${config.users.users.${user}.home}/nixconf-sheng/features/zed/config";
     in
     {
       hjem.users.${user} = {

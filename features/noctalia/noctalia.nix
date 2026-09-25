@@ -6,7 +6,7 @@
       ...
     }:
     let
-      configDir = "${config.my.base.repoDir}/features/noctalia/config";
+      configDir = "${config.users.users.${user}.home}/nixconf-sheng/features/noctalia/config";
     in
     {
       hjem = {

@@ -52,16 +52,6 @@
         };
       };
 
-      options.my.base.repoDir = lib.mkOption {
-        type = lib.types.str;
-        default = "${config.users.users.${cfg.name}.home}/nixconf-sheng";
-        description = ''
-          本仓库在设备上的检出目录。各模块的 configDir 软链基于它拼接
-          （如 <repoDir>/features/niri/config），仓库改名或换检出位置时
-          只改这一处默认值。
-        '';
-      };
-
       config = lib.mkMerge [
         {
           # 核心逻辑：把账号名导出为 _module.args.user，供 hjem 等功能模块直接引用

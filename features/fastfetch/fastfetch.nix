@@ -7,7 +7,7 @@
       ...
     }:
     let
-      configDir = "${config.my.base.repoDir}/features/fastfetch/config";
+      configDir = "${config.users.users.${user}.home}/nixconf-sheng/features/fastfetch/config";
     in
     {
       hjem.users.${user} = {
